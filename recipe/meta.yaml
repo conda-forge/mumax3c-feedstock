@@ -1,5 +1,5 @@
 {% set name = "mumax3c" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f81786cb89c48d1da96a5b790d15b86c5228cfce3ce80ee066dba1f26728ce3b
+  sha256: dd2a1aa74233093497d22856a13b611281ca34d9fea84e6955a565fc2495023f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -20,11 +20,11 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - micromagneticmodel >=0.64.0
-    - micromagnetictests >=0.63.2
+    - micromagneticmodel >=0.65.0
+    - micromagnetictests >=0.64.0
     - scipy
-    - ubermagtable >=0.61.4
-    - ubermagutil >=0.63.4
+    - ubermagtable >=0.62.0
+    - ubermagutil >=0.64.0
 
 test:
   imports:
